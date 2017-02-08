@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var piloto = new Piloto(new Coche());
+            Console.WriteLine(piloto.Conducir());
+
+            piloto = new Piloto(new Moto());
+            Console.WriteLine(piloto.Conducir());
+
+            Console.Read();
         }
     }
 }
